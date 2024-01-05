@@ -4,7 +4,6 @@ use App\Http\Controllers\Refrigeracao\Aparelho\AparelhoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteController;
 use App\Http\Controllers\Refrigeracao\Servico\ServicoController;
 use App\Http\Controllers\Refrigeracao\Usuario\UsuarioController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
