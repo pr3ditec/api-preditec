@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Refrigeracao\Aparelho\AparelhoController;
+use App\Http\Controllers\Refrigeracao\Cliente\ClienteController;
+use App\Http\Controllers\Refrigeracao\Servico\ServicoController;
+use App\Http\Controllers\Refrigeracao\Usuario\UsuarioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,6 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function (Request $res) {
-    return 'ok';
-});
+/** CLIENTES */
+Route::apiResource('/cliente', ClienteController::class);
+/** CLIENTES */
+
+/** USUARIO */
+Route::apiResource('/usuario', UsuarioController::class);
+Route::post('/cadastro/usuario', [UsuarioController::class, 'store']);
+/** USUARIO */
+
+/** SERVICO */
+Route::apiResource('/servico', ServicoController::class);
+/** SERVICO */
+
+/** APARELHO */
+Route::apiResource('/aparelho', AparelhoController::class);
+/** APARELHO */
