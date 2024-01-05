@@ -9,4 +9,8 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 |
-*/
+ */
+
+Route::get('/', function (Request $res) {
+    return 'adminok';
+});
