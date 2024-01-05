@@ -29,13 +29,17 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $this->routes(function () {
+            /** ROTA DE ADMIN */
             Route::middleware('api')
                 ->prefix('admin')
                 ->group(base_path('routes/admin.php'));
+            /** ROTA DE ADMIN */
 
+            /** ROTA DAS REFRIGERACOES */
             Route::middleware('api')
                 ->prefix('preditec')
                 ->group(base_path('routes/refrigeracao/preditec.php'));
+            /** ROTA DAS REFRIGERACOES */
 
         });
     }
