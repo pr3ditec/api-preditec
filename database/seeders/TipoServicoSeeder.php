@@ -30,6 +30,6 @@ class TipoServicoSeeder extends Seeder
 
         ];
 
-        DB::table('cliente')->insert($data);
+        DB::table('tipo_servico')->insert($data);
     }
 }

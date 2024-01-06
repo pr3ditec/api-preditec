@@ -17,12 +17,14 @@ class UsuarioSeeder extends Seeder
             [
                 "nome" => "admin",
                 "email" => "admin@email.com",
-                "tipo_usuario_id" => 1
+                "tipo_usuario_id" => 1,
+                "status_usuario_id" => 1
             ],
             [
                 "nome" => "preditec",
                 "email" => "preditec@email.com",
-                "tipo_usuario_id" => 2
+                "tipo_usuario_id" => 2,
+                "status_usuario_id" => 1
             ],
         ];
 
