@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome', 100);
             $table->foreignId('status_cliente_id')->references('id')->on('status_cliente')->onDelete('CASCADE');
+            $table->foreignId('usuario_id')->references('id')->on('usuario')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
