@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class StatusUsuarioSeeder extends Seeder
+class PaisSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,12 +14,12 @@ class StatusUsuarioSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ["status" => "ATIVO"],
-            ["status" => "INATIVO"],
-            ["status" => "BLOQUEADO"],
+            ["nome" => "BRASIL"],
+            ["nome" => "ARGENTINA"],
+            ["nome" => "PARAGUAI"],
+            ["nome" => "URUGUAI"],
         ];
 
-        DB::table('status_usuario')->insert($data);
-
+        DB::table('pais')->insert($data);
     }
 }
