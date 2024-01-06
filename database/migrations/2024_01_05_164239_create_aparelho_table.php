@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('aparelho', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 150);
+            $table->string('modelo', 50);
+            $table->foreignId('usuario_id')->references('id')->on('usuario')->onDelete('CASCADE');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

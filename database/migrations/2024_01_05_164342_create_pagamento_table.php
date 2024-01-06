@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_aparelho', function (Blueprint $table) {
+        Schema::create('pagamento', function (Blueprint $table) {
             $table->id();
+            $table->date('data_pagamento');
+            $table->foreignId('status_pagamento_id')->references('id')->on('status_pagamento')->onDelete('CASCADE');
+            $table->foreignId('forma_pagamento_id')->references('id')->on('forma_pagamento')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipo_aparelho');
+        Schema::dropIfExists('pagamento');
     }
 };

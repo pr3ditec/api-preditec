@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('pais', function (Blueprint $table) {
             $table->id();
+            $table->string('pais', 40)->unique();
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

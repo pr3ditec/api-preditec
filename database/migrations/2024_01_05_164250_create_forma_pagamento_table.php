@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('forma_pagamento', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 100)->unique();
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

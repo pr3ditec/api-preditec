@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('status_servico', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 50)->unique();
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

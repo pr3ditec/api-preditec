@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('tipo_servico', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 150)->unique();
+            $table->foreignId('usuario_id')->references('id')->on('usuario')->onDelete('CASCADE');
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('estado', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 30)->unique();
+            $table->string('uf',2)->unique();
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

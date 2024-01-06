@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('tipo_telefone', function (Blueprint $table) {
             $table->id();
+            $table->string('tipo', 50)->unique();
+            $table->boolean('ativo')->default(1);
             $table->timestamps();
         });
     }

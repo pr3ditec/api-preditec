@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('usuario', function (Blueprint $table) {
             $table->id();
+            $table->string('nome', 100);
+            $table->string('email', 100)->unique();
+            $table->foreignId('tipo_usuario_id')->references('id')->on('tipo_usuario')->onDelete('CASCADE');
+            $table->foreignId('status_usuario_id')->references('id')->on('status_usuario')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
