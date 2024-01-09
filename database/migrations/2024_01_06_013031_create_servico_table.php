@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('ordem_servico', 10);
             $table->string('observacao', 150)->nullable();
             $table->date('data_servico')->nullable();
+            $table->foreignId('aparelho_id')->references('id')->on('aparelho')->onDelete('CASCADE');
             $table->foreignId('status_servico_id')->references('id')->on('status_servico')->onDelete('CASCADE');
             $table->foreignId('cliente_id')->references('id')->on('cliente')->onDelete('CASCADE');
             $table->foreignId('usuario_id')->references('id')->on('usuario')->onDelete('CASCADE');
