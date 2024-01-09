@@ -15,11 +15,15 @@ class FormaPagamentoSeeder extends Seeder
     {
         $data = [
             ["nome" => "BOLETO"],
-            ["nome" => "PIX"],
+            ["nome" => "PIX PF"],
+            ["nome" => "PIX PJ"],
+            ["nome" => "TED PF"],
+            ["nome" => "TED PJ"],
             ["nome" => "CARTAO DEBITO"],
             ["nome" => "CARTAO CREDITO"],
             ["nome" => "DINHEIRO"],
             ["nome" => "DESCONHECIDO"],
+
         ];
 
         DB::table('forma_pagamento')->insert($data);
