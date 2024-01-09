@@ -29,5 +29,7 @@ class DatabaseSeeder extends Seeder
         $this->call(AparelhoSeeder::class);
         $this->call(TipoServicoSeeder::class);
 
+        $this->call(ClienteSeeder::class);
+
     }
 }

@@ -21,13 +21,13 @@ class TipoServicoSeeder extends Seeder
             ["nome" => mb_strtoupper('Carga de Gas'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Suporte'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Helice micro motor'), "usuario_id" => 2],
-            ["nome" => mb_strtoupper('Adaptacao'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Adaptacao valvula descongelante'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Valvula reversora'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Vazamento no capilar'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Venda'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Instalacao'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Higienizacao'), "usuario_id" => 2],
-            ["nome" => mb_strtoupper('Adaptacao serm valvula versora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Adaptacao sem valvula versora'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Helice'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Nivelamento'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Reinstalacao'), "usuario_id" => 2],
@@ -43,6 +43,10 @@ class TipoServicoSeeder extends Seeder
             ["nome" => mb_strtoupper('Reparo tubulacao'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Bolezina'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Valvula de servico'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Vazamento'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Camara de ventilacao'), "usuario_id" => 2],
+
+
         ];
 
         DB::table('tipo_servico')->insert($data);

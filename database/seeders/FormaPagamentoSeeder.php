@@ -19,6 +19,7 @@ class FormaPagamentoSeeder extends Seeder
             ["nome" => "CARTAO DEBITO"],
             ["nome" => "CARTAO CREDITO"],
             ["nome" => "DINHEIRO"],
+            ["nome" => "DESCONHECIDO"],
         ];
 
         DB::table('forma_pagamento')->insert($data);
