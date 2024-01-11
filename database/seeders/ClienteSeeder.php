@@ -198,6 +198,7 @@ class ClienteSeeder extends Seeder
 
 
 
+
         ];
 
         DB::table('cliente')->insert($data);
