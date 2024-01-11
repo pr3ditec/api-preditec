@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -45,7 +44,45 @@ class TipoServicoSeeder extends Seeder
             ["nome" => mb_strtoupper('Valvula de servico'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Vazamento'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Camara de ventilacao'), "usuario_id" => 2],
-
+            ["nome" => mb_strtoupper('Problema no sensor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Defeito de fabrica'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Compressor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Chave seletora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Desinstalacao'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Troca filtro'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Ar e cortina'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('linha de passagem'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Fusivel'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Placa'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Refazer Eletrica'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Colocar Tomada'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('motor ventilaçao condesadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('ponte 1-4'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Troca valvula'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Terminal eletrico motor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Troca canos aluminio'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Valvula entupida'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('motor ventilaçao evaporadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('porcas'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('sensor degelo'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('sensor ambiente'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('sensor serpentina'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('placa interface'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('ligacao eletrica'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('limpar filtros'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('controle remoto universal'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Desemtupir dreno'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Capacitor compressor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Reparo no transformador'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Motor ventilacao externa'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Solda evaporador'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Conserto'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Pilhas'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Placa potencia'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Sensor Evaporador'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Mudar condensadora de lugar'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Mudar evaporador de lugar'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('bimetal'), "usuario_id" => 2],
 
         ];
 
