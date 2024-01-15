@@ -83,6 +83,8 @@ class TipoServicoSeeder extends Seeder
             ["nome" => mb_strtoupper('Mudar condensadora de lugar'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Mudar evaporador de lugar'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('bimetal'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('canaletas'), "usuario_id" => 2],
+
 
         ];
 
