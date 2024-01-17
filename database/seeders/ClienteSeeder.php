@@ -15,7 +15,7 @@ class ClienteSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ["nome" => "Desconhecido", "status_cliente_id" => 1, "usuario_id" => "1"],
+                    ["nome" => "Desconhecido", "status_cliente_id" => 1, "usuario_id" => "1"],
 
         ];
 
