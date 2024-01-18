@@ -13,13 +13,12 @@ return new class extends Migration
     {
         Schema::create('endereco', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 100)->unique();
-            $table->string('rua', 150);
-            $table->string('numero', 10);
-            $table->string('bairro', 150);
-            $table->string('cep', 9);
-            $table->decimal('latitude', 10,8)->nullable();
-            $table->decimal('longitude', 10,8)->nullable();
+            $table->string('nome', 100)->unique()->nullable();
+            $table->string('rua', 150)->nullable();
+            $table->string('numero', 10)->nullable();
+            $table->string('bairro', 150)->nullable();
+            $table->string('cep', 9)->nullable( );
+            $table->foreignId('cidade_id')->references('id')->on('cidade')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
