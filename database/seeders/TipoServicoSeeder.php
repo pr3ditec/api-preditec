@@ -56,7 +56,21 @@ class TipoServicoSeeder extends Seeder
             ["nome" => mb_strtoupper('carenagem frontal condensadora'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('garantia'), "usuario_id" => 2],
             ["nome" => mb_strtoupper('Pilhas'), "usuario_id" => 2],
-
+            ["nome" => mb_strtoupper('Troca de canos'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('Contatora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('limpeza condensadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('furo no capilar'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('deslocamento evaporadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('compressor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('motor'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('instalar dreno'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('capacitor condensador'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('capacitor duplo'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('instalar evaporadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('deslocamento condensadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('instalar condensadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('desinstalar condensadora'), "usuario_id" => 2],
+            ["nome" => mb_strtoupper('ventilador'), "usuario_id" => 2],
 
 
         ];
