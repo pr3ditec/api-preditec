@@ -393,6 +393,8 @@ class ClienteSeeder extends Seeder
             ["id" => "377", "nome" => "Lauro Feijó", "status_cliente_id" => "1", "usuario_id" => "2", "created_at" => "2024-01-18 10:57:53", "updated_at" => "2024-01-18 10:57:53"],
             ["id" => "378", "nome" => "Homero Oliveira da Rosa", "status_cliente_id" => "1", "usuario_id" => "2", "created_at" => "2024-01-18 10:57:56", "updated_at" => "2024-01-18 10:57:56"],
             ["id" => "379", "nome" => "Daniela", "status_cliente_id" => "1", "usuario_id" => "2", "created_at" => "2024-01-18 10:57:57", "updated_at" => "2024-01-18 10:57:57"],
+            ["id" => "380", "nome" => "Valeria Fiss Wagner", "status_cliente_id" => "1", "usuario_id" => "2", "created_at" => "2024-01-18 10:57:57", "updated_at" => "2024-01-18 10:57:57"],
+
         ];
 
         try {
