@@ -100,4 +100,6 @@ class ClienteController extends Controller
         }
 
         return parent::apiResponse(200, true, 'updateMethodSuccess', $dados);
-    }}
+    }
+
+}
