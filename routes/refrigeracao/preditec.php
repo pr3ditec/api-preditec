@@ -18,11 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::apiResource('/cliente', ClienteController::class);
 /** CLIENTES */
 
-/** USUARIO */
-Route::apiResource('/usuario', UsuarioController::class);
-Route::post('/cadastro/usuario', [UsuarioController::class, 'store']);
-/** USUARIO */
-
 /** SERVICO */
 Route::apiResource('/servico', ServicoController::class);
 /** SERVICO */

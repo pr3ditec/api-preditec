@@ -32,8 +32,21 @@ class Request extends FormRequest
     {
         throw new HttpResponseException(response()->json([
             "status" => false,
-            "message" => 'errorValidation',
+            "messageCode" => 'errorValidation',
             "errors" => $validator->errors(),
-        ], 422));
+        ], 200));
     }
+
+    public function responseMessages(): array
+    {
+        return [
+            'required' => 'O :attribute não pode estar vazio',
+            'max' => 'O :attribute não pode exceder :max caracteres',
+            'min' => 'O :attribute nâo pode ser menor que :min caracteres',
+            'boolean' => 'O :attribute precisa ser do true/false',
+            'exists' => 'O :attribute não existe',
+            'unique' => 'O :attribute já existe',
+        ];
+    }
+
 }

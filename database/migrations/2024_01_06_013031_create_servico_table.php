@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('servico', function (Blueprint $table) {
             $table->id();
             $table->string('ordem_servico', 10);
-            $table->string('observacao', 150)->nullable();
+            $table->string('observacao', 255)->nullable();
             $table->date('data_servico')->nullable();
             $table->foreignId('aparelho_id')->references('id')->on('aparelho')->onDelete('CASCADE');
             $table->foreignId('status_servico_id')->references('id')->on('status_servico')->onDelete('CASCADE');
