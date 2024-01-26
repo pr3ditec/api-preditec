@@ -2,10 +2,10 @@
 
 namespace App\Models\Refrigeracao;
 
+use App\Models\LinkedModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Servico extends Model
+class Servico extends LinkedModel
 {
     use HasFactory;
 

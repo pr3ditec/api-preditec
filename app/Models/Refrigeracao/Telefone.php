@@ -2,10 +2,10 @@
 
 namespace App\Models\Refrigeracao;
 
+use App\Models\LinkedModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Telefone extends Model
+class Telefone extends LinkedModel
 {
     use HasFactory;
 

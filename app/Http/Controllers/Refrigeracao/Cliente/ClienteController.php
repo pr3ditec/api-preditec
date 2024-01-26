@@ -6,6 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Refrigeracao\Cliente\AlterarClienteRequest;
 use App\Http\Requests\Refrigeracao\Cliente\CriarClienteRequest;
 use App\Models\Refrigeracao\Cliente;
+use App\Models\Refrigeracao\ClienteDocumento;
+use App\Models\Refrigeracao\ClienteEndereco;
+use App\Models\Refrigeracao\ClienteTelefone;
+use App\Models\Refrigeracao\StatusCliente;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
@@ -40,7 +44,12 @@ class ClienteController extends Controller
 
         try {
 
+            /** BUSCANDO DADOS VINCULADOS COM MODELO DO CONTROLLER */
             $dados = $this->model::where('id', $id)->firstOrFail();
+            $telefone = $dados->getManyLink(ClienteTelefone::class, "cliente_id", "telefone", "telefone.id");
+            $documento = $dados->getManyLink(ClienteDocumento::class, "cliente_id", "documento", "documento.id");
+            $endereco = $dados->getManyLink(ClienteEndereco::class, "cliente_id", "endereco", "endereco.id");
+            /** BUSCANDO DADOS VINCULADOS COM MODELO DO CONTROLLER */
 
         } catch (ModelNotFoundException $e) {
 
@@ -51,7 +60,13 @@ class ClienteController extends Controller
             return parent::apiResponse(400, false, 'showMethodFailed');
         }
 
-        return parent::apiResponse(200, true, 'showMethodSuccess', $dados);
+        return parent::apiResponse(200, true, 'showMethodSuccess', [
+            "cliente" => $dados,
+            "status" => $dados->getDirectLink(StatusCliente::class, $dados->status_cliente_id),
+            "telefone" => $telefone,
+            "documento" => $documento,
+            "endereco" => $endereco,
+        ]);
     }
 
     public function store(CriarClienteRequest $request)
