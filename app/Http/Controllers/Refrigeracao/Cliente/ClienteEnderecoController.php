@@ -11,12 +11,16 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ClienteEnderecoController extends Controller
 {
+    /** CONTROLE GLOBAL */
+    public $model = ClienteEndereco::class;
+    /** CONTROLE GLOBAL */
+
     public function index()
     {
 
         try {
 
-            $dados = ClienteEndereco::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +40,7 @@ class ClienteEnderecoController extends Controller
 
         try {
 
-            $dados = ClienteEndereco::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +59,7 @@ class ClienteEnderecoController extends Controller
 
         try {
 
-            $dados = ClienteEndereco::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +73,7 @@ class ClienteEnderecoController extends Controller
     {
         try {
 
-            $dados = ClienteEndereco::where("id", $id)->firstOrFail();
+            $dados = $this->model::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -87,7 +91,7 @@ class ClienteEnderecoController extends Controller
     {
         try {
 
-            $dados = ClienteEndereco::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 

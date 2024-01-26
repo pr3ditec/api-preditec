@@ -11,12 +11,16 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ClienteTelefoneController extends Controller
 {
+    /** CONTROLE GLOBAL */
+    public $model = ClienteTelefone::class;
+    /** CONTROLE GLOBAL */
+
     public function index()
     {
 
         try {
 
-            $dados = ClienteTelefone::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +40,7 @@ class ClienteTelefoneController extends Controller
 
         try {
 
-            $dados = ClienteTelefone::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +59,7 @@ class ClienteTelefoneController extends Controller
 
         try {
 
-            $dados = ClienteTelefone::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +73,7 @@ class ClienteTelefoneController extends Controller
     {
         try {
 
-            $dados = ClienteTelefone::where("id", $id)->firstOrFail();
+            $dados = $this->model::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -87,7 +91,7 @@ class ClienteTelefoneController extends Controller
     {
         try {
 
-            $dados = ClienteTelefone::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 
