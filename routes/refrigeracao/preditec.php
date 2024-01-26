@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\Refrigeracao\Aparelho\AparelhoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteController;
+use App\Http\Controllers\Refrigeracao\Cliente\ClienteDocumentoController;
+use App\Http\Controllers\Refrigeracao\Cliente\ClienteEnderecoController;
+use App\Http\Controllers\Refrigeracao\Cliente\ClienteTelefoneController;
+use App\Http\Controllers\Refrigeracao\Cliente\StatusClienteController;
 use App\Http\Controllers\Refrigeracao\Documento\TipoDocumentoController;
 use App\Http\Controllers\Refrigeracao\Endereco\CidadeController;
 use App\Http\Controllers\Refrigeracao\Endereco\EstadoController;
@@ -25,6 +29,10 @@ use Illuminate\Support\Facades\Route;
 
 /** CLIENTES */
 Route::apiResource('/cliente', ClienteController::class);
+Route::apiResource('/cliente-documento', ClienteDocumentoController::class);
+Route::apiResource('/cliente-endereco', ClienteEnderecoController::class);
+Route::apiResource('/cliente-telefone', ClienteTelefoneController::class);
+Route::apiResource('/status-cliente', StatusClienteController::class);
 /** CLIENTES */
 
 /** SERVICO */
