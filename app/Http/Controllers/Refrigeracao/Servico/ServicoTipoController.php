@@ -11,12 +11,17 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ServicoTipoController extends Controller
 {
+
+    /** CONTROLE GLOBAL */
+    public $model = ServicoTipo::class;
+    /** CONTROLE GLOBAL */
+
     public function index()
     {
 
         try {
 
-            $dados = ServicoTipo::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +41,7 @@ class ServicoTipoController extends Controller
 
         try {
 
-            $dados = ServicoTipo::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +60,7 @@ class ServicoTipoController extends Controller
 
         try {
 
-            $dados = ServicoTipo::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +74,7 @@ class ServicoTipoController extends Controller
     {
         try {
 
-            $dados = ServicoTipo::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->update($request->validated());
 
@@ -88,7 +93,7 @@ class ServicoTipoController extends Controller
     {
         try {
 
-            $dados = ServicoTipo::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 
