@@ -11,12 +11,17 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PaisController extends Controller
 {
+
+    /** CONTROLE GLOBAL */
+    public $model = Pais::class;
+    /** CONTROLE GLOBAL */
+
     public function index()
     {
 
         try {
 
-            $dados = Pais::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +41,7 @@ class PaisController extends Controller
 
         try {
 
-            $dados = Pais::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +60,7 @@ class PaisController extends Controller
 
         try {
 
-            $dados = Pais::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +74,7 @@ class PaisController extends Controller
     {
         try {
 
-            $dados = Pais::where("id", $id)->firstOrFail();
+            $dados = $this->model::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -87,7 +92,7 @@ class PaisController extends Controller
     {
         try {
 
-            $dados = Pais::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 

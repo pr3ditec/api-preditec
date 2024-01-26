@@ -11,12 +11,17 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class StatusPagamentoController extends Controller
 {
+
+    /** CONTROLE GLOBAL */
+    public $model = StatusPagamento::class;
+    /** CONTROLE GLOBAL */
+
     public function index()
     {
 
         try {
 
-            $dados = StatusPagamento::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +41,7 @@ class StatusPagamentoController extends Controller
 
         try {
 
-            $dados = StatusPagamento::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +60,7 @@ class StatusPagamentoController extends Controller
 
         try {
 
-            $dados = StatusPagamento::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +74,7 @@ class StatusPagamentoController extends Controller
     {
         try {
 
-            $dados = StatusPagamento::where("id", $id)->firstOrFail();
+            $dados = $this->model::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -87,7 +92,7 @@ class StatusPagamentoController extends Controller
     {
         try {
 
-            $dados = StatusPagamento::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 

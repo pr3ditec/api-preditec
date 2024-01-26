@@ -11,12 +11,15 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class FormaPagamentoController extends Controller
 {
+    /** CONTROLE GLOBAL */
+    public $model = FormaPagamento::class;
+    /** CONTROLE GLOBAL */
     public function index()
     {
 
         try {
 
-            $dados = FormaPagamento::all();
+            $dados = $this->model::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +39,7 @@ class FormaPagamentoController extends Controller
 
         try {
 
-            $dados = FormaPagamento::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -55,7 +58,7 @@ class FormaPagamentoController extends Controller
 
         try {
 
-            $dados = FormaPagamento::create($request->validated());
+            $dados = $this->model::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -69,7 +72,7 @@ class FormaPagamentoController extends Controller
     {
         try {
 
-            $dados = FormaPagamento::where("id", $id)->firstOrFail();
+            $dados = $this->model::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -87,7 +90,7 @@ class FormaPagamentoController extends Controller
     {
         try {
 
-            $dados = FormaPagamento::where('id', $id)->firstOrFail();
+            $dados = $this->model::where('id', $id)->firstOrFail();
 
             $dados->delete();
 
