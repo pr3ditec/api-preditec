@@ -6,8 +6,10 @@ use App\Http\Controllers\Refrigeracao\Cliente\ClienteDocumentoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteEnderecoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteTelefoneController;
 use App\Http\Controllers\Refrigeracao\Cliente\StatusClienteController;
+use App\Http\Controllers\Refrigeracao\Documento\DocumentoController;
 use App\Http\Controllers\Refrigeracao\Documento\TipoDocumentoController;
 use App\Http\Controllers\Refrigeracao\Endereco\CidadeController;
+use App\Http\Controllers\Refrigeracao\Endereco\EnderecoController;
 use App\Http\Controllers\Refrigeracao\Endereco\EstadoController;
 use App\Http\Controllers\Refrigeracao\Endereco\PaisController;
 use App\Http\Controllers\Refrigeracao\Pagamento\FormaPagamentoController;
@@ -17,6 +19,8 @@ use App\Http\Controllers\Refrigeracao\Servico\ServicoController;
 use App\Http\Controllers\Refrigeracao\Servico\ServicoTipoController;
 use App\Http\Controllers\Refrigeracao\Servico\StatusServicoController;
 use App\Http\Controllers\Refrigeracao\Servico\TipoServicoController;
+use App\Http\Controllers\Refrigeracao\Telefone\TelefoneController;
+use App\Http\Controllers\Refrigeracao\Telefone\TipoTelefoneController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +39,11 @@ Route::apiResource('/cliente-telefone', ClienteTelefoneController::class);
 Route::apiResource('/status-cliente', StatusClienteController::class);
 /** CLIENTES */
 
+/** TELEFONE */
+Route::apiResource('/telefone', TelefoneController::class);
+Route::apiResource('/tipo-telefone', TipoTelefoneController::class);
+/** TELEFONE */
+
 /** SERVICO */
 Route::apiResource('/servico', ServicoController::class);
 Route::apiResource('/servico-tipo', ServicoTipoController::class);
@@ -46,9 +55,14 @@ Route::apiResource('/status-servico', StatusServicoController::class);
 Route::apiResource('/aparelho', AparelhoController::class);
 /** APARELHO */
 
-/** TIPO DOCUMENTO */
+/** DOCUMENTO */
+Route::apiResource('/documento', DocumentoController::class);
 Route::apiResource('/tipo-documento', TipoDocumentoController::class);
-/** TIPO DOCUMENTO */
+/** DOCUMENTO */
+
+/** ENDERECO */
+Route::apiResource('/endereco', EnderecoController::class);
+/** ENDERECO */
 
 /** LOCALIDADES */
 Route::apiResource('/cidade', CidadeController::class);
