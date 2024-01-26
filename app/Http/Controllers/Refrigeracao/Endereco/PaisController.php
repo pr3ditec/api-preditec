@@ -3,9 +3,102 @@
 namespace App\Http\Controllers\Refrigeracao\Endereco;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Refrigeracao\Pais\AlterarPaisRequest;
+use App\Http\Requests\Refrigeracao\Pais\CriarPaisRequest;
+use App\Models\Refrigeracao\Pais;
+use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PaisController extends Controller
 {
-    //
+    public function index()
+    {
+
+        try {
+
+            $dados = Pais::all();
+
+            if ($dados->isEmpty()) {
+
+                return parent::apiResponse(200, false, 'dataNotFound');
+            }
+
+        } catch (Exception $e) {
+
+            return parent::apiResponse(400, false, "indexMethodFailed");
+        }
+
+        return parent::apiResponse(200, true, "indexMethodSuccess", $dados);
+    }
+
+    public function show(int $id)
+    {
+
+        try {
+
+            $dados = Pais::where('id', $id)->firstOrFail();
+
+        } catch (ModelNotFoundException $e) {
+
+            return parent::apiResponse(200, false, 'dataNotFound', []);
+
+        } catch (Exception $e) {
+
+            return parent::apiResponse(400, false, 'showMethodFailed');
+        }
+
+        return parent::apiResponse(200, true, 'showMethodSuccess', $dados);
+    }
+
+    public function store(CriarPaisRequest $request)
+    {
+
+        try {
+
+            $dados = Pais::create($request->validated());
+
+        } catch (Exception $e) {
+
+            return parent::apiResponse(400, false, 'storeMethodFailed');
+        }
+
+        return parent::apiResponse(200, true, 'storeMethodSuccess', $dados);
+    }
+
+    public function update(AlterarPaisRequest $request, int $id)
+    {
+        try {
+
+            $dados = Pais::where("id", $id)->firstOrFail();
+            $dados->update($request->validated());
+
+        } catch (ModelNotFoundException $e) {
+
+            return parent::apiResponse(200, false, 'dataNotFound');
+        } catch (Exception $e) {
+
+            return parent::apiResponse(400, false, 'updateMethodFailed');
+        }
+
+        return parent::apiResponse(200, true, 'updateMethodSuccess', $dados);
+    }
+
+    public function destroy(int $id)
+    {
+        try {
+
+            $dados = Pais::where('id', $id)->firstOrFail();
+
+            $dados->delete();
+
+        } catch (ModelNotFoundException $e) {
+
+            return parent::apiResponse(200, false, 'dataNotFound');
+        } catch (Exception $e) {
+
+            return parent::apiResponse(400, false, 'destroyMethodFailed');
+        }
+
+        return parent::apiResponse(200, true, 'destroyMethodSuccess', $dados);
+    }
 }

@@ -25,7 +25,7 @@ class AparelhoController extends Controller
 
         } catch (Exception $e) {
 
-            return parent::apiResponse(404, false, "indexMethodFailed");
+            return parent::apiResponse(400, false, "indexMethodFailed");
         }
 
         return parent::apiResponse(200, true, "indexMethodSuccess", $dados);
@@ -44,7 +44,7 @@ class AparelhoController extends Controller
 
         } catch (Exception $e) {
 
-            return parent::apiResponse(404, false, 'showMethodFailed');
+            return parent::apiResponse(400, false, 'showMethodFailed');
         }
 
         return parent::apiResponse(200, true, 'showMethodSuccess', $dados);
@@ -59,7 +59,7 @@ class AparelhoController extends Controller
 
         } catch (Exception $e) {
 
-            return parent::apiResponse(404, false, 'storeMethodFailed');
+            return parent::apiResponse(400, false, 'storeMethodFailed');
         }
 
         return parent::apiResponse(200, true, 'storeMethodSuccess', $dados);
@@ -77,7 +77,7 @@ class AparelhoController extends Controller
             return parent::apiResponse(200, false, 'dataNotFound');
         } catch (Exception $e) {
 
-            return parent::apiResponse(404, false, 'updateMethodFailed');
+            return parent::apiResponse(400, false, 'updateMethodFailed');
         }
 
         return parent::apiResponse(200, true, 'updateMethodSuccess', $dados);
@@ -96,7 +96,7 @@ class AparelhoController extends Controller
             return parent::apiResponse(200, false, 'dataNotFound');
         } catch (Exception $e) {
 
-            return parent::apiResponse(404, false, 'updateMethodFailed');
+            return parent::apiResponse(400, false, 'updateMethodFailed');
         }
 
         return parent::apiResponse(200, true, 'updateMethodSuccess', $dados);

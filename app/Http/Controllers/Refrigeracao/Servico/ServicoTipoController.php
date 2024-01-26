@@ -3,20 +3,20 @@
 namespace App\Http\Controllers\Refrigeracao\Servico;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Refrigeracao\Servico\AlterarServicoRequest;
-use App\Http\Requests\Refrigeracao\Servico\CriarServicoRequest;
-use App\Models\Refrigeracao\Servico;
+use App\Http\Requests\Refrigeracao\ServicoTipo\AlterarServicoTipoRequest;
+use App\Http\Requests\Refrigeracao\ServicoTipo\CriarServicoTipoRequest;
+use App\Models\Refrigeracao\ServicoTipo;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class ServicoController extends Controller
+class ServicoTipoController extends Controller
 {
     public function index()
     {
 
         try {
 
-            $dados = Servico::all();
+            $dados = ServicoTipo::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +36,7 @@ class ServicoController extends Controller
 
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
+            $dados = ServicoTipo::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -50,12 +50,12 @@ class ServicoController extends Controller
         return parent::apiResponse(200, true, 'showMethodSuccess', $dados);
     }
 
-    public function store(CriarServicoRequest $request)
+    public function store(CriarServicoTipoRequest $request)
     {
 
         try {
 
-            $dados = Servico::create($request->validated());
+            $dados = ServicoTipo::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -65,11 +65,11 @@ class ServicoController extends Controller
         return parent::apiResponse(200, true, 'storeMethodSuccess', $dados);
     }
 
-    public function update(AlterarServicoRequest $request, int $id)
+    public function update(AlterarServicoTipoRequest $request, int $id)
     {
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
+            $dados = ServicoTipo::where('id', $id)->firstOrFail();
 
             $dados->update($request->validated());
 
@@ -88,7 +88,7 @@ class ServicoController extends Controller
     {
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
+            $dados = ServicoTipo::where('id', $id)->firstOrFail();
 
             $dados->delete();
 

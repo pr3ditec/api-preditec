@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Refrigeracao\Servico;
+namespace App\Http\Controllers\Refrigeracao\Pagamento;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Refrigeracao\Servico\AlterarServicoRequest;
-use App\Http\Requests\Refrigeracao\Servico\CriarServicoRequest;
-use App\Models\Refrigeracao\Servico;
+use App\Http\Requests\Refrigeracao\Pagamento\AlterarPagamentoRequest;
+use App\Http\Requests\Refrigeracao\Pagamento\CriarPagamentoRequest;
+use App\Models\Refrigeracao\Pagamento;
 use Exception;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
-class ServicoController extends Controller
+class PagamentoController extends Controller
 {
     public function index()
     {
 
         try {
 
-            $dados = Servico::all();
+            $dados = Pagamento::all();
 
             if ($dados->isEmpty()) {
 
@@ -36,7 +36,7 @@ class ServicoController extends Controller
 
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
+            $dados = Pagamento::where('id', $id)->firstOrFail();
 
         } catch (ModelNotFoundException $e) {
 
@@ -50,12 +50,12 @@ class ServicoController extends Controller
         return parent::apiResponse(200, true, 'showMethodSuccess', $dados);
     }
 
-    public function store(CriarServicoRequest $request)
+    public function store(CriarPagamentoRequest $request)
     {
 
         try {
 
-            $dados = Servico::create($request->validated());
+            $dados = Pagamento::create($request->validated());
 
         } catch (Exception $e) {
 
@@ -65,12 +65,11 @@ class ServicoController extends Controller
         return parent::apiResponse(200, true, 'storeMethodSuccess', $dados);
     }
 
-    public function update(AlterarServicoRequest $request, int $id)
+    public function update(AlterarPagamentoRequest $request, int $id)
     {
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
-
+            $dados = Pagamento::where("id", $id)->firstOrFail();
             $dados->update($request->validated());
 
         } catch (ModelNotFoundException $e) {
@@ -88,7 +87,7 @@ class ServicoController extends Controller
     {
         try {
 
-            $dados = Servico::where('id', $id)->firstOrFail();
+            $dados = Pagamento::where('id', $id)->firstOrFail();
 
             $dados->delete();
 
@@ -97,10 +96,9 @@ class ServicoController extends Controller
             return parent::apiResponse(200, false, 'dataNotFound');
         } catch (Exception $e) {
 
-            return parent::apiResponse(400, false, 'deleteMethodFailed');
+            return parent::apiResponse(400, false, 'destroyMethodFailed');
         }
 
-        return parent::apiResponse(200, true, 'deleteMethodSuccess', $dados);
+        return parent::apiResponse(200, true, 'destroyMethodSuccess', $dados);
     }
-
 }
