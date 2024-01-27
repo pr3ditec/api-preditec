@@ -101,9 +101,9 @@ class AparelhoController extends Controller
             return parent::apiResponse(200, false, 'dataNotFound');
         } catch (Exception $e) {
 
-            return parent::apiResponse(400, false, 'updateMethodFailed');
+            return parent::apiResponse(400, false, 'deleteMethodFailed');
         }
 
-        return parent::apiResponse(200, true, 'updateMethodSuccess', $dados);
+        return parent::apiResponse(200, true, 'deleteMethodSuccess', $dados);
     }
 }
