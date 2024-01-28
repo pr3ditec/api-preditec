@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Refrigeracao\Aparelho\AparelhoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteDocumentoController;
@@ -29,7 +30,13 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 |
- */
+*/
+
+
+
+/** LOGIN */
+Route::post('/login', [LoginController::class, 'login']);
+/** LOGIN */
 
 /** CLIENTES */
 Route::apiResource('/cliente', ClienteController::class);

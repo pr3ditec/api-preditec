@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('login', function (Blueprint $table) {
             $table->id();
             $table->foreignId('usuario_id')->references('id')->on('usuario')->onDelete('CASCADE');
-            $table->string('token', 24)->unique();
+            $table->string('token')->unique();
             $table->timestamps();
         });
     }
