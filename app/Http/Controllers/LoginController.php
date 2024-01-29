@@ -6,12 +6,7 @@ use App\Http\Requests\CriarLoginRequest;
 use App\Models\Login;
 use App\Models\Refrigeracao\Usuario;
 use Exception;
-use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
-use function Laravel\Prompts\password;
-use function PHPUnit\Framework\isEmpty;
 
 class LoginController extends Controller
 {

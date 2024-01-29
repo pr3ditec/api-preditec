@@ -22,6 +22,7 @@ use App\Http\Controllers\Refrigeracao\Servico\StatusServicoController;
 use App\Http\Controllers\Refrigeracao\Servico\TipoServicoController;
 use App\Http\Controllers\Refrigeracao\Telefone\TelefoneController;
 use App\Http\Controllers\Refrigeracao\Telefone\TipoTelefoneController;
+use App\Http\Middleware\VerifyUserToken;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,47 +39,51 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [LoginController::class, 'login']);
 /** LOGIN */
 
-/** CLIENTES */
-Route::apiResource('/cliente', ClienteController::class);
-Route::apiResource('/cliente-documento', ClienteDocumentoController::class);
-Route::apiResource('/cliente-endereco', ClienteEnderecoController::class);
-Route::apiResource('/cliente-telefone', ClienteTelefoneController::class);
-Route::apiResource('/status-cliente', StatusClienteController::class);
-/** CLIENTES */
+Route::middleware(VerifyUserToken::class)->group(function (){
 
-/** TELEFONE */
-Route::apiResource('/telefone', TelefoneController::class);
-Route::apiResource('/tipo-telefone', TipoTelefoneController::class);
-/** TELEFONE */
+    /** CLIENTES */
+    Route::apiResource('/cliente', ClienteController::class);
+    Route::apiResource('/cliente-documento', ClienteDocumentoController::class);
+    Route::apiResource('/cliente-endereco', ClienteEnderecoController::class);
+    Route::apiResource('/cliente-telefone', ClienteTelefoneController::class);
+    Route::apiResource('/status-cliente', StatusClienteController::class);
+    /** CLIENTES */
 
-/** SERVICO */
-Route::apiResource('/servico', ServicoController::class);
-Route::apiResource('/servico-tipo', ServicoTipoController::class);
-Route::apiResource('/tipo-servico', TipoServicoController::class);
-Route::apiResource('/status-servico', StatusServicoController::class);
-/** SERVICO */
+    /** TELEFONE */
+    Route::apiResource('/telefone', TelefoneController::class);
+    Route::apiResource('/tipo-telefone', TipoTelefoneController::class);
+    /** TELEFONE */
 
-/** APARELHO */
-Route::apiResource('/aparelho', AparelhoController::class);
-/** APARELHO */
+    /** SERVICO */
+    Route::apiResource('/servico', ServicoController::class);
+    Route::apiResource('/servico-tipo', ServicoTipoController::class);
+    Route::apiResource('/tipo-servico', TipoServicoController::class);
+    Route::apiResource('/status-servico', StatusServicoController::class);
+    /** SERVICO */
 
-/** DOCUMENTO */
-Route::apiResource('/documento', DocumentoController::class);
-Route::apiResource('/tipo-documento', TipoDocumentoController::class);
-/** DOCUMENTO */
+    /** APARELHO */
+    Route::apiResource('/aparelho', AparelhoController::class);
+    /** APARELHO */
 
-/** ENDERECO */
-Route::apiResource('/endereco', EnderecoController::class);
-/** ENDERECO */
+    /** DOCUMENTO */
+    Route::apiResource('/documento', DocumentoController::class);
+    Route::apiResource('/tipo-documento', TipoDocumentoController::class);
+    /** DOCUMENTO */
 
-/** LOCALIDADES */
-Route::apiResource('/cidade', CidadeController::class);
-Route::apiResource('/estado', EstadoController::class);
-Route::apiResource('/pais', PaisController::class);
-/** LOCALIDADES */
+    /** ENDERECO */
+    Route::apiResource('/endereco', EnderecoController::class);
+    /** ENDERECO */
 
-/** PAGAMENTO */
-Route::apiResource('/pagamento', PagamentoController::class);
-Route::apiResource('/forma-pagamento', FormaPagamentoController::class);
-Route::apiResource('/status-pagamento', StatusPagamentoController::class);
-/** PAGAMENTO */
+    /** LOCALIDADES */
+    Route::apiResource('/cidade', CidadeController::class);
+    Route::apiResource('/estado', EstadoController::class);
+    Route::apiResource('/pais', PaisController::class);
+    /** LOCALIDADES */
+
+    /** PAGAMENTO */
+    Route::apiResource('/pagamento', PagamentoController::class);
+    Route::apiResource('/forma-pagamento', FormaPagamentoController::class);
+    Route::apiResource('/status-pagamento', StatusPagamentoController::class);
+    /** PAGAMENTO */
+    }
+);
