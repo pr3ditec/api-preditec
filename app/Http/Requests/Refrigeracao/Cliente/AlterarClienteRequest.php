@@ -25,6 +25,7 @@ class AlterarClienteRequest extends Request
             'nome' => 'max:100|unique:cliente,nome',
             'status_cliente_id' => 'exists:status_cliente,id',
             'usuario_id' => 'exists:usuario,id',
+            'ativo' => 'boolean',
         ];
     }
 
