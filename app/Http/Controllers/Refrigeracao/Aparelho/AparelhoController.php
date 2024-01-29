@@ -58,9 +58,12 @@ class AparelhoController extends Controller
     public function store(CriarAparelhoRequest $request)
     {
 
+        $insertData = $request->validated();
+        $insertData['usuario_id'] = parent::getUserByToken($request->header('Authorization'));
+
         try {
 
-            $dados = $this->model::create($request->validated());
+            $dados = $this->model::create($insertData);
 
         } catch (Exception $e) {
 
