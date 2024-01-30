@@ -17,6 +17,7 @@ use App\Http\Controllers\Refrigeracao\Pagamento\FormaPagamentoController;
 use App\Http\Controllers\Refrigeracao\Pagamento\PagamentoController;
 use App\Http\Controllers\Refrigeracao\Pagamento\StatusPagamentoController;
 use App\Http\Controllers\Refrigeracao\Servico\ServicoController;
+use App\Http\Controllers\Refrigeracao\Servico\ServicoEnderecoController;
 use App\Http\Controllers\Refrigeracao\Servico\ServicoTipoController;
 use App\Http\Controllers\Refrigeracao\Servico\StatusServicoController;
 use App\Http\Controllers\Refrigeracao\Servico\TipoServicoController;
@@ -59,6 +60,7 @@ Route::middleware(VerifyUserToken::class)->group(function (){
     Route::apiResource('/servico-tipo', ServicoTipoController::class);
     Route::apiResource('/tipo-servico', TipoServicoController::class);
     Route::apiResource('/status-servico', StatusServicoController::class);
+    Route::apiResource('/servico-endereco', ServicoEnderecoController::class);
     /** SERVICO */
 
     /** APARELHO */
@@ -86,4 +88,5 @@ Route::middleware(VerifyUserToken::class)->group(function (){
     Route::apiResource('/status-pagamento', StatusPagamentoController::class);
     /** PAGAMENTO */
     }
+
 );
