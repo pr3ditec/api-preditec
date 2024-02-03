@@ -9,6 +9,6 @@ class TipoAparelho extends Model
 {
     use HasFactory;
 
-    protected $table = 'telefone_aparelho';
+    protected $table = 'tipo_aparelho';
     protected $guarded = [];
 }

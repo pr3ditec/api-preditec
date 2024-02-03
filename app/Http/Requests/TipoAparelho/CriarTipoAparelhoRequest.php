@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Refrigeracao\Aparelho;
+namespace App\Http\Requests\TipoAparelho;
 
 use App\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class AlterarAparelhoRequest extends Request
+class CriarTipoAparelhoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,14 +23,13 @@ class AlterarAparelhoRequest extends Request
     public function rules(): array
     {
         return [
-            'nome' => 'max:150',
-            'descricao' => 'max:200',
-            'tipo_aparelho_id' => 'exists:tipo_aparelho,id',
-            'ativo' => 'boolean',
+            "nome" => "required|max:100",
+            "modelo" => "required|max:50",
+            "ativo" => "boolean"
         ];
     }
 
-    public function messages(): array
+    public function messages()
     {
         return parent::responseMessages();
     }

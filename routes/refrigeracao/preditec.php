@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Refrigeracao\Aparelho\AparelhoController;
+use App\Http\Controllers\Refrigeracao\Aparelho\TipoAparelhoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteDocumentoController;
 use App\Http\Controllers\Refrigeracao\Cliente\ClienteEnderecoController;
@@ -65,6 +66,7 @@ Route::middleware(VerifyUserToken::class)->group(function (){
 
     /** APARELHO */
     Route::apiResource('/aparelho', AparelhoController::class);
+    Route::apiResource('/tipo-aparelho', TipoAparelhoController::class);
     /** APARELHO */
 
     /** DOCUMENTO */

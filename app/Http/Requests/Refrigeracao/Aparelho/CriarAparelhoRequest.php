@@ -23,7 +23,8 @@ class CriarAparelhoRequest extends Request
     {
         return [
             'nome' => 'required|max:150',
-            'modelo' => 'max:50',
+            'descricao' => 'max:200',
+            'tipo_aparelho_id' => 'required|exists:tipo_aparelho,id',
             'ativo' => 'boolean',
         ];
     }
